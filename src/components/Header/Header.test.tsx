@@ -15,7 +15,7 @@ describe('Header', () => {
   it('renders Header', () => {
     render(<Header {...DATA} />)
 
-    const header = screen.getByRole('header')
+    const header = screen.getByTestId('header')
 
     expect(header).toBeInTheDocument()
   })

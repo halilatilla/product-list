@@ -11,7 +11,7 @@ interface Props {
 
 const Header: FC<Props> = ({ className, ...rest }) => {
   return (
-    <header className={classnames(styles.headerWrapper, className)} {...rest}>
+    <header className={classnames(styles.headerWrapper, className)} {...rest} data-testid="header">
       <div className={classnames(styles.header, 'container flex-center-between')}>
         <Logo />
         <div>search</div>
