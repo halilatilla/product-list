@@ -1,0 +1,41 @@
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-center-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (max-width: 1440px) {
+  .container {
+    padding: 0 40px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0 8px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 0 4px;
+  }
+}
