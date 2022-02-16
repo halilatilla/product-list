@@ -1,14 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Input renders correctly 1`] = `
+exports[`Search renders correctly 1`] = `
 <div>
-  <label
-    class="block"
-  >
-    <input
-      class="input"
-      type="text"
-    />
-  </label>
+  <input
+    class="input"
+    type="text"
+    value=""
+  />
 </div>
 `;
