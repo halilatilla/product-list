@@ -1,11 +1,5 @@
-# Todo App
-You can drag and drop , add , remove and mark items as complete. Items persist with refresh using local storage.
-<br>
-
-
-![Screen Shot 2022-02-15 at 12 06 07](https://user-images.githubusercontent.com/27916419/154028948-1ffeb6fb-6457-4db8-bfbf-d50b5ecb4aa2.png)
-
-
+# Product List
+You can search , filter , order and add basket. Items persist with refresh using local storage.
 
 <br>
 
@@ -13,19 +7,16 @@ You can drag and drop , add , remove and mark items as complete. Items persist w
 - NextJS 
 - Typescript
 - Redux Toolkit 
-- React Beautiful Dnd
-- Framer Motion
-- Tailwindcss
 - Jest - React Testing Library
 
 <br>
 
 ## Development
 
-To install and work on `https://github.com/halilatilla/todo-app`
+To install and work on `https://github.com/halilatilla/product-list`
 
 ```bash
-git clone https://github.com/halilatilla/todo-app
+git clone https://github.com/halilatilla/product-list
 cd todo-app
 npm install or yarn install
 ```
