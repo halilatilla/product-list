@@ -1,0 +1,11 @@
+@import 'normalize.css';
+@import 'variables/_colors.css';
+@import 'utils/index.css';
+
+html,
+body {
+  font-family: 'Roboto', sans-serif;
+  color: var(--c-text);
+  background-color: var(--c-background);
+  scroll-behavior: smooth;
+}
