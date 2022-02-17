@@ -1,0 +1,27 @@
+.cartItem {
+  display: flex;
+  gap: 10px;
+  max-width: 240px;
+}
+
+.cartItemImage {
+  border: 1px solid var(--c-border-light);
+  padding: 7px;
+  width: 54px;
+  height: 72px;
+  position: relative;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.cartItemDetail {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cartItemTitle {
+  font-size: 12px;
+  text-transform: capitalize;
+  display: block;
+}
