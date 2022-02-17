@@ -1,7 +1,7 @@
 import { NextPage } from 'next'
 import Head from 'next/head'
 
-import { Header, SubHeader } from '@src/components'
+import { Header, SubHeader, Products } from '@src/components'
 
 const Home: NextPage = () => {
   return (
@@ -14,6 +14,7 @@ const Home: NextPage = () => {
         <Header />
         <main className="container">
           <SubHeader />
+          <Products />
         </main>
       </section>
     </>
