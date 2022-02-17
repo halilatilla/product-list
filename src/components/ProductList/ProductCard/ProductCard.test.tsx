@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react'
 
-import Products from './Products'
+import ProductCard from './ProductCard'
 
-describe('Products', () => {
+describe('ProductCard', () => {
   it('renders correctly', () => {
-    const { container } = render(<Products />)
+    const { container } = render(<ProductCard />)
     expect(container).toMatchSnapshot()
   })
 })
