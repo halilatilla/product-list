@@ -7,4 +7,9 @@
 
 .header {
   width: 100%;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  gap: 16px;
+  grid-template-columns: max-content 1fr max-content;
 }

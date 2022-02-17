@@ -1,18 +1,32 @@
 import { FC } from 'react'
 import classnames from 'classnames'
 
-import styles from './Input.module.css'
+import { useAppDispatch, setSearchTerm } from '@src/store'
+import { removeWhiteSpace } from '@src/lib'
+
+import styles from './Search.module.css'
 
 interface Props {
-  type?: string
   placeholder?: string
   className?: string
-  value: string | number
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
-const Search: FC<Props> = ({ type = 'text', className, ...rest }) => {
-  return <input type={type} className={classnames(styles.input, className)} {...rest} />
+const Search: FC<Props> = ({ className, ...rest }) => {
+  const dispatch = useAppDispatch()
+
+  const handleSearchTerm = (value: string) => {
+    const removedWhiteSpaceValue = removeWhiteSpace(value)
+    dispatch(setSearchTerm(removedWhiteSpaceValue))
+  }
+
+  return (
+    <input
+      type="search"
+      className={classnames(styles.search, className)}
+      onChange={(e) => handleSearchTerm(e.target.value)}
+      {...rest}
+    />
+  )
 }
 
 export default Search

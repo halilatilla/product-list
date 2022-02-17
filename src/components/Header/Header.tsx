@@ -1,8 +1,7 @@
 import { FC } from 'react'
 import classnames from 'classnames'
 
-import { Logo } from '@src/components'
-
+import { Logo, Search } from '@src/components'
 import styles from './Header.module.css'
 
 interface Props {
@@ -12,9 +11,9 @@ interface Props {
 const Header: FC<Props> = ({ className, ...rest }) => {
   return (
     <header className={classnames(styles.headerWrapper, className)} {...rest} data-testid="header">
-      <div className={classnames(styles.header, 'container flex-center-between')}>
+      <div className={classnames(styles.header, 'container')}>
         <Logo />
-        <div>search</div>
+        <Search placeholder="25 milyon’dan fazla ürün içerisinde ara" />
         <div>basket</div>
       </div>
     </header>
