@@ -27,6 +27,7 @@
   border-radius: 4px;
   padding: 20px;
   cursor: default;
+  z-index: 1;
 }
 
 .cartDetail::after {
