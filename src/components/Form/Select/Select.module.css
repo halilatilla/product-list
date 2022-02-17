@@ -1,0 +1,13 @@
+.select {
+  --cart-width: 118px;
+
+  height: 48px;
+  border: 1px solid var(--c-border);
+  border-radius: 4px;
+  cursor: pointer;
+  padding-right: 20px;
+  font-size: 17px;
+  color: var(--c-text-light);
+  padding-left: 8px;
+  text-transform: capitalize;
+}

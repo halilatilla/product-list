@@ -8,15 +8,15 @@ export interface IBasket {
 
 const initialState: IBasket[] = []
 
-const basketSlice = createSlice({
-  name: 'basket',
+const cartSlice = createSlice({
+  name: 'cart',
   initialState,
   reducers: {
-    addToBasket: (state, action: PayloadAction<IBasket>) => {
+    addToCart: (state, action: PayloadAction<IBasket>) => {
       state.push(action.payload)
     },
   },
 })
 
-export default basketSlice.reducer
-export const { addToBasket } = basketSlice.actions
+export default cartSlice.reducer
+export const { addToCart } = cartSlice.actions
