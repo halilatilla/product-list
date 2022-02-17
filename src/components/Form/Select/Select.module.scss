@@ -1,6 +1,4 @@
 .select {
-  --cart-width: 118px;
-
   height: 48px;
   border: 1px solid var(--c-border);
   border-radius: 4px;
@@ -10,4 +8,8 @@
   color: var(--c-text-light);
   padding-left: 8px;
   text-transform: capitalize;
+
+  &:hover {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+  }
 }

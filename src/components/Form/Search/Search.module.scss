@@ -10,9 +10,9 @@
   background-image: url('/assets/icon-search.svg');
   background-repeat: no-repeat;
   background-position: 28px center;
-}
 
-.search::placeholder {
-  color: var(--c-text-light);
-  font-size: 15px;
+  &::placeholder {
+    color: var(--c-text-light);
+    font-size: 15px;
+  }
 }

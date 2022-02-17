@@ -4,7 +4,7 @@ import classnames from 'classnames'
 import { useAppDispatch, setSelectedItem } from '@src/store'
 import { orderOptions } from '@src/constants'
 
-import styles from './Select.module.css'
+import styles from './Select.module.scss'
 
 interface Props {
   placeholder?: string

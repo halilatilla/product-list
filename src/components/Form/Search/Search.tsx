@@ -4,7 +4,7 @@ import classnames from 'classnames'
 import { useAppDispatch, setSearchTerm } from '@src/store'
 import { removeWhiteSpace } from '@src/lib'
 
-import styles from './Search.module.css'
+import styles from './Search.module.scss'
 
 interface Props {
   placeholder?: string
