@@ -1,5 +1,20 @@
-.products {
-  display: grid;
-  grid-template-columns: max-content 1fr;
-  gap: 24px;
+.sidebar {
+  min-width: 200px;
+}
+
+.title {
+  font-weight: 500;
+  text-transform: capitalize;
+  margin-top: 24px;
+  margin-bottom: 20px;
+}
+
+.filterItem {
+  color: var(--c-text-secondary);
+  font-size: 14px;
+  text-transform: capitalize;
+
+  &:hover {
+    color: var(--c-primary);
+  }
 }
