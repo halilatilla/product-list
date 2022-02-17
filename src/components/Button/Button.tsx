@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import classnames from 'classnames'
 
-import styles from './Button.module.css'
+import styles from './Button.module.scss'
 
 interface Props {
   label?: string
