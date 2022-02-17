@@ -1,5 +1,6 @@
 :root {
   --c-primary: #ff6000;
+  --c-primary-light: rgba(255, 96, 0, 0.11);
   --c-black: #000;
   --c-white: #fff;
   --c-text: #484848;
@@ -8,4 +9,8 @@
   --c-background: var(--c-white);
   --c-border: #b0b0b0;
   --c-border-light: #e5e5e5;
+  --c-delete: #f90000;
+  --c-success: #90d659;
+  --c-close: #d65959;
+  --c-disabled: rgba(126, 126, 126, 0.11);
 }

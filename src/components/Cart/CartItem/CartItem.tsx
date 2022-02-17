@@ -17,7 +17,7 @@ const Cart: FC<Props> = ({ className, ...rest }) => {
       </div>
       <div className={styles.cartItemDetail}>
         <div className={styles.cartItemTitle}> iPhone 11 Kırmızı Kılıflı Garantili Telefon</div>
-        <Button label="kaldır" />
+        <Button label="kaldır" appearance="delete" />
       </div>
     </div>
   )

@@ -1,5 +1,52 @@
 .button {
+  border: none;
+  border-radius: 4px;
+  height: 26px;
+  width: 70px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 0;
+  cursor: pointer;
 }
 
-.icon {
+.button:disabled {
+  background-color: var(--c-disabled);
+  color: var(--c-text-light);
+  pointer-events: none;
+}
+
+.button:hover {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+}
+
+.delete {
+  background-color: var(--c-white);
+  color: var(--c-delete);
+  border: 1px solid var(--c-delete);
+  text-transform: capitalize;
+  font-size: 10px;
+  font-weight: normal;
+  height: 18px;
+  width: 50px;
+}
+
+.confirm {
+  background-color: var(--c-success);
+  color: var(--c-white);
+}
+
+.close {
+  background-color: var(--c-close);
+  color: var(--c-white);
+}
+
+.addToCart {
+  background-color: var(--c-primary-light);
+  color: var(--c-primary);
+  text-transform: capitalize;
+  border-radius: 8px;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 500;
 }
