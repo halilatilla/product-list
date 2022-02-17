@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import classnames from 'classnames'
 
-import { Logo, Search } from '@src/components'
+import { Logo, Search, Cart } from '@src/components'
 import styles from './Header.module.css'
 
 interface Props {
@@ -14,7 +14,7 @@ const Header: FC<Props> = ({ className, ...rest }) => {
       <div className={classnames(styles.header, 'container')}>
         <Logo />
         <Search placeholder="25 milyon’dan fazla ürün içerisinde ara" />
-        <div>basket</div>
+        <Cart />
       </div>
     </header>
   )
