@@ -1,0 +1,18 @@
+.search {
+  height: 48px;
+  background-color: #eee;
+  border: none;
+  width: 100%;
+  border-radius: 100px;
+  max-width: 645px;
+  padding-left: 58px;
+  padding-right: 28px;
+  background-image: url('/assets/icon-search.svg');
+  background-repeat: no-repeat;
+  background-position: 28px center;
+}
+
+.search::placeholder {
+  color: var(--c-text-light);
+  font-size: 15px;
+}
