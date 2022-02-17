@@ -2,18 +2,15 @@ import { FC, useState, useEffect } from 'react'
 import classnames from 'classnames'
 import Image from 'next/image'
 
-import { IProduct } from '@src/types'
 import { getPriceDiscount } from '@src/lib'
 import { useAppDispatch, addToCart, useAppSelector } from '@src/store'
+import { BLUR_DATA_URL } from '@src/constants'
 import { Button } from '@src/components'
+import { IProps } from './Types'
+
 import styles from './ProductCard.module.scss'
 
-interface Props {
-  className?: string
-  product: IProduct
-}
-
-const ProductCard: FC<Props> = ({ className, product, ...rest }) => {
+const ProductCard: FC<IProps> = ({ className, product, ...rest }) => {
   const { productId, imgUrl, title, brand, color, discount, price } = product
 
   const [itemIsAlreadyAdded, setItemIsAlreadyAdded] = useState(false)
@@ -42,7 +39,15 @@ const ProductCard: FC<Props> = ({ className, product, ...rest }) => {
   return (
     <div className={classnames(styles.productCard, className)} {...rest}>
       <div className={classnames(styles.imageWrapper, 'flex-center')}>
-        <Image src={imgUrl} alt={title} className={styles.image} width={224} height={332} />
+        <Image
+          src={imgUrl}
+          alt={title}
+          placeholder="blur"
+          blurDataURL={BLUR_DATA_URL}
+          className={styles.image}
+          width={224}
+          height={332}
+        />
       </div>
       <div className={styles.detail}>
         <p className={styles.title}> {title} </p>
