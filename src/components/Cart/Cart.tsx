@@ -14,7 +14,10 @@ const Cart: FC<Props> = ({ className, ...rest }) => {
       <div className={classnames(styles.cartItemsCount, 'flex-center')}>4</div>
       <p className={styles.cartTitle}>basket</p>
       <div className={styles.cartDetail}>
-        <CartItem />
+        <div className={styles.cartItemList}>
+          <CartItem />
+          <CartItem />
+        </div>
       </div>
     </div>
   )

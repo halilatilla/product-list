@@ -16,7 +16,7 @@
 }
 
 .cartDetail {
-  display: none;
+  /* display: none; */
   position: absolute;
   top: 96%;
   right: -1px;
@@ -47,6 +47,12 @@
 .cart:hover .cartDetail {
   display: block;
   border-top-right-radius: 0;
+}
+
+.cartItemList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .cartItemsCount {
