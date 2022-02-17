@@ -1,9 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 export interface IBasket {
-  id: string
+  productId: string
+  imgUrl: string
   title: string
-  completed: boolean
 }
 
 const initialState: IBasket[] = []
@@ -14,6 +14,9 @@ const cartSlice = createSlice({
   reducers: {
     addToCart: (state, action: PayloadAction<IBasket>) => {
       state.push(action.payload)
+    },
+    removeFromCart: (state, action: PayloadAction<string>) => {
+      return state.filter((item) => item.productId !== action.payload)
     },
   },
 })

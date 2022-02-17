@@ -6,9 +6,11 @@
   --c-text: #484848;
   --c-text-secondary: #646464;
   --c-text-light: #b0b0b0;
+  --c-text-disabled: #b0b0b0;
   --c-background: var(--c-white);
   --c-border: #b0b0b0;
   --c-border-light: #e5e5e5;
+  --c-border-dark: #cdcdcd;
   --c-delete: #f90000;
   --c-success: #90d659;
   --c-close: #d65959;

@@ -9,7 +9,7 @@ import { useLocalStorage } from '@src/hooks'
 import styles from '@src/styles/pages/Products.module.scss'
 
 const Home: NextPage = () => {
-  const [productList, setProductList] = useLocalStorage('products', [])
+  const [localProducts, setProductList] = useLocalStorage('products', [])
 
   const handleGetProducts = async () => {
     const products = await getAllProducts()
@@ -32,7 +32,7 @@ const Home: NextPage = () => {
           <SubHeader />
           <div className={styles.products}>
             <SideBar />
-            <ProductList productList={productList} />
+            {localProducts.length > 0 && <ProductList products={localProducts} />}
           </div>
         </main>
       </section>

@@ -1,18 +1,19 @@
 import { FC } from 'react'
 import classnames from 'classnames'
 
+import { IProduct } from '@src/types'
 import ProductCard from './ProductCard/ProductCard'
 import styles from './ProductList.module.scss'
 
 interface Props {
   className?: string
-  productList: any[]
+  products: IProduct[]
 }
 
-const ProductList: FC<Props> = ({ className, productList, ...rest }) => {
+const ProductList: FC<Props> = ({ className, products, ...rest }) => {
   return (
     <div className={classnames(styles.productList, className)} {...rest}>
-      {productList.map((product, index) => (
+      {products.map((product) => (
         <ProductCard key={product?.productId} product={product} />
       ))}
     </div>
