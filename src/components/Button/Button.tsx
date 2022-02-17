@@ -9,13 +9,13 @@ interface Props {
   className?: string
   disabled?: boolean
   type?: 'submit' | 'button' | 'reset'
-  appearance?: 'icon'
+  appearance?: 'delete' | 'confirm' | 'close' | 'addToCart'
 }
 
 const Button: FC<Props> = ({ label, onClick, className, children, disabled, type = 'button', appearance, ...rest }) => {
   return (
     <button
-      className={classnames(styles.button, styles?.[appearance!], className)}
+      className={classnames(styles.button, 'flex-center', styles?.[appearance!], className)}
       onClick={onClick}
       disabled={disabled}
       type={type}

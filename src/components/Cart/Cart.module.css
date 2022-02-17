@@ -16,7 +16,7 @@
 }
 
 .cartDetail {
-  /* display: none; */
+  display: none;
   position: absolute;
   top: 96%;
   right: -1px;
@@ -26,6 +26,7 @@
   min-height: 100px;
   border-radius: 4px;
   padding: 20px;
+  cursor: default;
 }
 
 .cartDetail::after {
