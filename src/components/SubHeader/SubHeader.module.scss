@@ -1,0 +1,22 @@
+.subHeader {
+  padding-top: 16px;
+  padding-bottom: 16px;
+
+  h1 {
+    line-height: 0;
+  }
+}
+
+.searchTerm,
+.searchTermResult {
+  font-size: 15px;
+  text-transform: capitalize;
+}
+
+.searchTerm {
+  color: var(--c-text-light);
+}
+
+.searchTermResult {
+  color: var(--c-black);
+}
