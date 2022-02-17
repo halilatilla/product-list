@@ -4,11 +4,11 @@ import { render as rtlRender } from '@testing-library/react'
 import { configureStore } from '@reduxjs/toolkit'
 import { Provider } from 'react-redux'
 
-import todoSlice from './src/store/reducers/basketSlice'
+import cartSlice from './src/store/reducers/cartSlice'
 
 function render(
   ui,
-  { preloadedState, store = configureStore({ reducer: { user: todoSlice }, preloadedState }), ...renderOptions } = {},
+  { preloadedState, store = configureStore({ reducer: { user: cartSlice }, preloadedState }), ...renderOptions } = {},
 ) {
   function Wrapper({ children }) {
     return <Provider store={store}>{children}</Provider>

@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react'
 
-import Search from './Search'
+import Select from './Select'
 
-describe('Search', () => {
+describe('Select', () => {
   it('renders correctly', () => {
-    const { container } = render(<Search />)
+    const { container } = render(<Select />)
     expect(container).toMatchSnapshot()
   })
 })
