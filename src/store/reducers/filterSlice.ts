@@ -18,7 +18,7 @@ const filterSlice = createSlice({
       state.filteredProducts = action.payload
     },
 
-    setOrderBy: (state, action) => {
+    setOrderBy: (state, action: PayloadAction<string>) => {
       state.orderBy = action.payload
     },
     setFilterBy: (state, action: PayloadAction<{ value: string; productValue: string }>) => {

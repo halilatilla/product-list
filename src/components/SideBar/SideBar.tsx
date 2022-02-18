@@ -3,10 +3,11 @@ import classnames from 'classnames'
 import Fuse from 'fuse.js'
 
 import { useAppSelector, useAppDispatch, setFilterBy, setOrderBy, setFilteredProducts } from '@src/store'
-import { IFilter } from '@src/types'
 import { getUniqueItemsFromList, getSameItemCountFromList } from '@src/lib'
-import { Button } from '@src/components'
 import { filterInitialItems } from '@src/constants'
+import { IFilter } from '@src/types'
+import { Button } from '@src/components'
+import { getPriceDiscount, getSortedListByAZ } from '@src/lib'
 import styles from './SideBar.module.scss'
 
 interface Props {
@@ -61,9 +62,15 @@ const SideBar: FC<Props> = ({ className, ...rest }) => {
 
   const handleFilteredItem = ({ value, productValue }: { value: string; productValue: string }) => {
     if (productValue === 'order') {
+      if (orderBy === value) {
+        dispatch(setOrderBy(''))
+        return
+      }
+
       dispatch(setOrderBy(value))
       return
     }
+
     /* @ts-ignore */
     if (filterBy[productValue] === value) {
       dispatch(setFilterBy({ value: '', productValue }))
@@ -103,13 +110,34 @@ const SideBar: FC<Props> = ({ className, ...rest }) => {
     )
   }, [filterBy])
 
+  useEffect(() => {
+    const sortedProducts = Array.from(filteredProducts)?.sort((a, b) => {
+      if (orderBy === 'za') {
+        /* @ts-ignore */
+        return new Date(b.createdDate) - new Date(a.createdDate)
+      }
+      if (orderBy === 'max') {
+        /* @ts-ignore */
+        return getPriceDiscount(parseFloat(b.price), b.discount) - getPriceDiscount(parseFloat(a.price), a.discount)
+      }
+      if (orderBy === 'min') {
+        /* @ts-ignore */
+        return getPriceDiscount(parseFloat(a.price), a.discount) - getPriceDiscount(parseFloat(b.price), b.discount)
+      }
+      /* @ts-ignore */
+      return new Date(a.createdDate) - new Date(b.createdDate)
+    })
+
+    dispatch(setFilteredProducts(sortedProducts))
+  }, [orderBy])
+
   return (
     <div className={classnames(styles.sidebar, className)} {...rest}>
       {filterItems.map(({ title, items, value: productValue }) => (
         <div className={styles.filter} key={title}>
           {items.length > 0 && <p className={styles.title}>{title}</p>}
           <ul>
-            {items.map(({ label, value, count }) => (
+            {getSortedListByAZ(items, 'label').map(({ label, value, count }) => (
               <li key={label}>
                 <Button
                   className={classnames(styles.filterItem, {
