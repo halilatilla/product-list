@@ -18,7 +18,7 @@ const Cart: FC<Props> = ({ className, ...rest }) => {
         <div className={classnames(styles.cartItemsCount, 'flex-center')}>{cartItems.length}</div>
       )}
 
-      <p className={styles.cartTitle}>basket</p>
+      <p className={styles.cartTitle}>sepetim</p>
       <div className={styles.cartDetail}>
         {cartItems.length > 0 ? (
           <div className={styles.cartItemList}>
@@ -27,7 +27,7 @@ const Cart: FC<Props> = ({ className, ...rest }) => {
             ))}
           </div>
         ) : (
-          <div>Sepet Boş</div>
+          <div>Sepetinizde ürün bulunmamaktadır.</div>
         )}
       </div>
     </div>
