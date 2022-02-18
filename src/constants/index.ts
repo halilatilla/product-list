@@ -7,3 +7,21 @@ export const orderOptions = [
   { value: 'az', label: 'en yeniler (A-Z)' },
   { value: 'za', label: 'en yeniler (Z-A)' },
 ]
+
+export const filterInitialItems = [
+  {
+    title: 'renk',
+    value: 'color',
+    items: [],
+  },
+  {
+    title: 'sıralama',
+    value: 'order',
+    items: [...orderOptions],
+  },
+  {
+    title: 'marka',
+    value: 'brand',
+    items: [],
+  },
+]

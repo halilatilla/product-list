@@ -15,7 +15,7 @@ const cartSlice = createSlice({
       return state.filter((item) => item.productId !== action.payload)
     },
     updateCartItems: (state, action: PayloadAction<ICart[]>) => {
-      return action.payload
+      return (state = action.payload)
     },
   },
 })

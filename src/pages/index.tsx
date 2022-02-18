@@ -2,14 +2,17 @@ import { useEffect } from 'react'
 import { NextPage } from 'next'
 import Head from 'next/head'
 
-import { Header, SubHeader, SideBar, ProductList } from '@src/components'
 import { getAllProducts } from '@src/api'
+import { useAppDispatch, setFilteredProducts } from '@src/store'
 import { useLocalStorage } from '@src/hooks'
+import { Header, SubHeader, SideBar, ProductList } from '@src/components'
 
 import styles from '@src/styles/pages/Products.module.scss'
 
 const Home: NextPage = () => {
   const [localProducts, setProductList] = useLocalStorage('products', [])
+
+  const dispatch = useAppDispatch()
 
   const handleGetProducts = async () => {
     const products = await getAllProducts()
@@ -19,6 +22,10 @@ const Home: NextPage = () => {
   useEffect(() => {
     handleGetProducts()
   }, [])
+
+  useEffect(() => {
+    dispatch(setFilteredProducts(localProducts))
+  }, [localProducts])
 
   return (
     <>
@@ -32,7 +39,7 @@ const Home: NextPage = () => {
           <SubHeader />
           <div className={styles.products}>
             <SideBar />
-            {localProducts.length > 0 && <ProductList products={localProducts} />}
+            <ProductList />
           </div>
         </main>
       </section>

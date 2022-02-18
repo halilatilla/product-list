@@ -13,3 +13,21 @@ export interface ICart {
   imgUrl: string
   title: string
 }
+
+export interface IFilterItems {
+  value: string
+  label: string
+  count?: number
+}
+
+export interface IFilter {
+  title: string
+  value: string
+  items: IFilterItems[]
+}
+
+export interface IFilterState {
+  filterBy: string[]
+  orderBy?: string
+  filteredProducts: IProduct[]
+}
