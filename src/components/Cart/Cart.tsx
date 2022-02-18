@@ -1,7 +1,8 @@
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 import classnames from 'classnames'
 
-import { useAppSelector } from '@src/store'
+import { useAppSelector, useAppDispatch, updateCartItems } from '@src/store'
+import { useLocalStorage } from '@src/hooks'
 import CartItem from './CartItem/CartItem'
 import styles from './Cart.module.scss'
 
@@ -11,18 +12,30 @@ interface Props {
 
 const Cart: FC<Props> = ({ className, ...rest }) => {
   const cartItems = useAppSelector((state) => state.cart)
+  const dispatch = useAppDispatch()
+  const [localCartItems, setLocalCartItems] = useLocalStorage('cart', cartItems)
+
+  useEffect(() => {
+    if (localCartItems) {
+      dispatch(updateCartItems(localCartItems))
+    }
+  }, [])
+
+  useEffect(() => {
+    setLocalCartItems(cartItems)
+  }, [cartItems])
 
   return (
     <div className={classnames(styles.cart, 'flex-center', className)} {...rest}>
-      {cartItems.length > 0 && (
-        <div className={classnames(styles.cartItemsCount, 'flex-center')}>{cartItems.length}</div>
+      {localCartItems.length > 0 && (
+        <div className={classnames(styles.cartItemsCount, 'flex-center')}>{localCartItems.length}</div>
       )}
 
       <p className={styles.cartTitle}>sepetim</p>
       <div className={styles.cartDetail}>
-        {cartItems.length > 0 ? (
+        {localCartItems.length > 0 ? (
           <div className={styles.cartItemList}>
-            {cartItems.map((item) => (
+            {localCartItems.map((item) => (
               <CartItem key={item.productId} item={item} />
             ))}
           </div>

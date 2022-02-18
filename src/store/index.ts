@@ -1,4 +1,4 @@
-export { addToCart, removeItemFromCart } from './reducers/cartSlice'
+export { addToCart, removeItemFromCart, updateCartItems } from './reducers/cartSlice'
 export { setSearchTerm } from './reducers/searchSlice'
 export { setSelectedItem } from './reducers/selectSlice'
 
