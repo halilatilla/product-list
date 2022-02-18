@@ -6,6 +6,7 @@
   font-weight: bold;
   text-transform: uppercase;
   line-height: 0;
+  border: none;
 
   &:hover {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
@@ -47,4 +48,15 @@
   width: 100%;
   font-size: 14px;
   font-weight: 500;
+}
+
+.text {
+  font-weight: normal;
+  text-transform: capitalize;
+  font-size: 14px;
+  width: max-content;
+
+  &:hover {
+    box-shadow: none;
+  }
 }
