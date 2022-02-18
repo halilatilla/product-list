@@ -1,25 +1,21 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-export interface IBasket {
-  productId: string
-  imgUrl: string
-  title: string
-}
+import { ICart } from '@src/types'
 
-const initialState: IBasket[] = []
+const initialState: ICart[] = []
 
 const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
-    addToCart: (state, action: PayloadAction<IBasket>) => {
+    addToCart: (state, action: PayloadAction<ICart>) => {
       state.push(action.payload)
     },
-    removeFromCart: (state, action: PayloadAction<string>) => {
+    removeItemFromCart: (state, action: PayloadAction<string>) => {
       return state.filter((item) => item.productId !== action.payload)
     },
   },
 })
 
 export default cartSlice.reducer
-export const { addToCart } = cartSlice.actions
+export const { addToCart, removeItemFromCart } = cartSlice.actions

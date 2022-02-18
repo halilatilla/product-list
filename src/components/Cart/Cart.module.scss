@@ -7,6 +7,17 @@
   border-radius: 4px;
   position: relative;
   cursor: pointer;
+
+  &:hover {
+    border-bottom-color: transparent;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+    .cartDetail {
+      display: block;
+      border-top-right-radius: 0;
+    }
+  }
 }
 
 .cartTitle {
@@ -28,27 +39,16 @@
   padding: 20px;
   cursor: default;
   z-index: 1;
-}
 
-.cartDetail::after {
-  content: '';
-  background-color: var(--c-white);
-  width: calc(var(--cart-width) - 2px);
-  height: 1px;
-  position: absolute;
-  bottom: 100%;
-  right: 0px;
-}
-
-.cart:hover {
-  border-bottom-color: transparent;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-.cart:hover .cartDetail {
-  display: block;
-  border-top-right-radius: 0;
+  &::after {
+    content: '';
+    background-color: var(--c-white);
+    width: calc(var(--cart-width) - 2px);
+    height: 1px;
+    position: absolute;
+    bottom: 100%;
+    right: 0px;
+  }
 }
 
 .cartItemList {
