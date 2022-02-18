@@ -2,6 +2,7 @@ import { FC } from 'react'
 import classnames from 'classnames'
 
 import { orderOptions } from '@src/constants'
+import { Button } from '@src/components'
 import styles from './SideBar.module.scss'
 
 interface Props {
@@ -41,7 +42,7 @@ const SideBar: FC<Props> = ({ className, ...rest }) => {
           <ul>
             {items.map(({ label }) => (
               <li key={label}>
-                <button className={styles.filterItem}>{label}</button>
+                <Button className={styles.filterItem} label={label} appearance="text" />
               </li>
             ))}
           </ul>

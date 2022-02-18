@@ -9,7 +9,7 @@ interface Props {
   className?: string
   disabled?: boolean
   type?: 'submit' | 'button' | 'reset'
-  appearance?: 'delete' | 'confirm' | 'close' | 'addToCart'
+  appearance?: 'delete' | 'confirm' | 'close' | 'addToCart' | 'text'
 }
 
 const Button: FC<Props> = ({ label, onClick, className, children, disabled, type = 'button', appearance, ...rest }) => {
