@@ -26,8 +26,12 @@ export interface IFilter {
   items: IFilterItems[]
 }
 
+export interface IFilterBy {
+  color: string
+  brand: string
+}
 export interface IFilterState {
-  filterBy: string[]
+  filterBy: IFilterBy
   orderBy?: string
   filteredProducts: IProduct[]
 }

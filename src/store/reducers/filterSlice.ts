@@ -1,8 +1,11 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { IFilterState } from '@src/types'
 
 const initialState: IFilterState = {
-  filterBy: [],
+  filterBy: {
+    color: '',
+    brand: '',
+  },
   orderBy: '',
   filteredProducts: [],
 }
@@ -18,8 +21,9 @@ const filterSlice = createSlice({
     setOrderBy: (state, action) => {
       state.orderBy = action.payload
     },
-    setFilterBy: (state, action) => {
-      state.filterBy.push(action.payload)
+    setFilterBy: (state, action: PayloadAction<{ value: string; productValue: string }>) => {
+      /* @ts-ignore */
+      state.filterBy[action.payload.productValue] = action.payload.value
     },
     updateFilterBy: (state, action) => {
       state.filterBy = action.payload

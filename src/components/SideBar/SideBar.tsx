@@ -1,7 +1,8 @@
 import { FC, useEffect, useState } from 'react'
 import classnames from 'classnames'
+import Fuse from 'fuse.js'
 
-import { useAppSelector, useAppDispatch, setFilterBy, setOrderBy, updateFilterBy } from '@src/store'
+import { useAppSelector, useAppDispatch, setFilterBy, setOrderBy, setFilteredProducts } from '@src/store'
 import { IFilter } from '@src/types'
 import { getUniqueItemsFromList, getSameItemCountFromList } from '@src/lib'
 import { Button } from '@src/components'
@@ -16,7 +17,14 @@ const SideBar: FC<Props> = ({ className, ...rest }) => {
   const { filteredProducts, filterBy, orderBy } = useAppSelector((state) => state.filter)
   const dispatch = useAppDispatch()
 
+  const [initialProducts, setInitialProducts] = useState([])
+
   const [filterItems, setFilterItems] = useState<IFilter[]>(filterInitialItems)
+
+  const fuse = new Fuse(initialProducts, {
+    keys: ['color', 'brand'],
+    threshold: 0,
+  })
 
   useEffect(() => {
     const colors = getUniqueItemsFromList(filteredProducts, 'color')
@@ -56,15 +64,44 @@ const SideBar: FC<Props> = ({ className, ...rest }) => {
       dispatch(setOrderBy(value))
       return
     }
-
-    if (filterBy.includes(value)) {
-      const newFilterBy = filterBy.filter((item) => item !== value)
-      dispatch(updateFilterBy(newFilterBy))
+    /* @ts-ignore */
+    if (filterBy[productValue] === value) {
+      dispatch(setFilterBy({ value: '', productValue }))
       return
     }
 
-    dispatch(setFilterBy(value))
+    dispatch(setFilterBy({ value, productValue }))
   }
+
+  useEffect(() => {
+    const initialProducts = localStorage.getItem('products')
+
+    if (initialProducts) {
+      setInitialProducts(JSON.parse(initialProducts))
+    }
+  }, [])
+
+  useEffect(() => {
+    if (filterBy.brand === '' && filterBy.color === '') {
+      dispatch(setFilteredProducts(initialProducts))
+      return
+    }
+
+    if (filterBy.brand !== '' && filterBy.color !== '') {
+      dispatch(
+        setFilteredProducts(
+          fuse.search({ $and: [{ brand: filterBy.brand }, { color: filterBy.color }] }).map((result) => result.item),
+        ),
+      )
+      return
+    }
+
+    dispatch(
+      setFilteredProducts(
+        fuse.search({ $or: [{ brand: filterBy.brand }, { color: filterBy.color }] }).map((result) => result.item),
+      ),
+    )
+  }, [filterBy])
 
   return (
     <div className={classnames(styles.sidebar, className)} {...rest}>
@@ -76,7 +113,8 @@ const SideBar: FC<Props> = ({ className, ...rest }) => {
               <li key={label}>
                 <Button
                   className={classnames(styles.filterItem, {
-                    [styles.active]: filterBy.includes(value) || orderBy === value,
+                    /* @ts-ignore */
+                    [styles.active]: filterBy[productValue] === value || orderBy === value,
                   })}
                   label={label}
                   appearance="text"
