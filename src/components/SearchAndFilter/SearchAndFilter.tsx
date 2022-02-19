@@ -40,7 +40,7 @@ const SearchAndFilter: FC<Props> = ({ products }) => {
 
   useEffect(() => {
     if (searchTerm.length > 2) {
-      dispatch(setFilteredProducts(fuse.search(searchTerm).map((result) => result.item)))
+      dispatch(setFilteredProducts(fuse.search({ title: searchTerm }).map((result) => result.item)))
       return
     }
 

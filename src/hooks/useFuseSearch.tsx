@@ -6,8 +6,7 @@ export default function useFuseSearch(keys: string[] = []) {
 
   const fuse = new Fuse(value, {
     keys,
-    threshold: 0,
-    useExtendedSearch: true,
+    threshold: 0.3,
   })
 
   useEffect(() => {
