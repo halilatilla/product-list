@@ -1,21 +1,22 @@
 import { FC } from 'react'
 import classnames from 'classnames'
 
-import { useAppSelector, useAppDispatch, setFilterBy, setOrderBy } from '@src/store'
+import { useAppSelector, useAppDispatch, setFilterByColor, setFilterByBrand, setOrderBy } from '@src/store'
 import { getSortedListByAZ } from '@src/lib'
 import { filterOptions } from '@src/constants'
 import { Button } from '@src/components'
+import { IFilterItem } from '@src/types'
 import styles from './SideBarList.module.scss'
 
 interface Props {
   className?: string
-  items: any[]
   title: string
   productValue: string
+  items: IFilterItem[]
 }
 
 const SideBarList: FC<Props> = ({ className, items, title, productValue, ...rest }) => {
-  const { filterBy, orderBy } = useAppSelector((state) => state.filter)
+  const { filterByColor, filterByBrand, orderBy } = useAppSelector((state) => state.filter)
   const dispatch = useAppDispatch()
 
   const handleFilteredItem = ({ value, productValue }: { value: string; productValue: string }) => {
@@ -29,13 +30,22 @@ const SideBarList: FC<Props> = ({ className, items, title, productValue, ...rest
       return
     }
 
-    /* @ts-ignore */
-    if (filterBy[productValue] === value) {
-      dispatch(setFilterBy({ value: '', productValue }))
+    if (productValue === filterOptions.COLOR) {
+      if (filterByColor === value) {
+        dispatch(setFilterByColor(''))
+        return
+      }
+
+      dispatch(setFilterByColor(value))
       return
     }
 
-    dispatch(setFilterBy({ value, productValue }))
+    if (filterByBrand === value) {
+      dispatch(setFilterByBrand(''))
+      return
+    }
+
+    dispatch(setFilterByBrand(value))
   }
 
   return (
@@ -46,8 +56,7 @@ const SideBarList: FC<Props> = ({ className, items, title, productValue, ...rest
           <li key={label}>
             <Button
               className={classnames(styles.item, {
-                /* @ts-ignore */
-                [styles.active]: filterBy[productValue] === value || orderBy === value,
+                [styles.active]: orderBy === value || filterByColor === value || filterByBrand === value,
               })}
               label={label}
               appearance="text"

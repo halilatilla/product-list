@@ -14,7 +14,7 @@ export interface ICart {
   title: string
 }
 
-export interface IFilterItems {
+export interface IFilterItem {
   value: string
   label: string
   count?: number
@@ -23,15 +23,17 @@ export interface IFilterItems {
 export interface IFilter {
   title: string
   value: string
-  items: IFilterItems[]
+  items: IFilterItem[]
 }
 
 export interface IFilterBy {
   color: string
   brand: string
+  value: string
 }
 export interface IFilterState {
-  filterBy: IFilterBy
+  filterByBrand: string
+  filterByColor: string
   orderBy?: string
   searchTerm: string
   filteredProducts: IProduct[]
