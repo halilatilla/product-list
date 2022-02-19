@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import classnames from 'classnames'
 
-import { Select } from '@src/components'
+import { Order } from '@src/components'
 import styles from './SubHeader.module.scss'
 
 interface Props {
@@ -16,7 +16,7 @@ const SubHeader: FC<Props> = ({ className, ...rest }) => {
         <span className={styles.searchTerm}> aranan kelime: </span>{' '}
         <span className={styles.searchTermResult}>iPhone 11</span>
       </div>
-      <Select />
+      <Order />
     </div>
   )
 }

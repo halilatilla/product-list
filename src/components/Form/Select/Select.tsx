@@ -2,18 +2,16 @@ import { FC } from 'react'
 import classnames from 'classnames'
 
 import { useAppDispatch, useAppSelector, setOrderBy } from '@src/store'
-import { orderOptions } from '@src/constants'
 
 import styles from './Select.module.scss'
 
 interface Props {
   placeholder?: string
   className?: string
+  options: any[]
 }
 
-const options = [{ value: '', label: 'sıralama' }, ...orderOptions]
-
-const Select: FC<Props> = ({ className, ...rest }) => {
+const Select: FC<Props> = ({ className, options, ...rest }) => {
   const dispatch = useAppDispatch()
   const { orderBy } = useAppSelector((state) => state.filter)
 

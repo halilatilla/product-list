@@ -7,6 +7,7 @@ const initialState: IFilterState = {
     brand: '',
   },
   orderBy: '',
+  searchTerm: '',
   filteredProducts: [],
 }
 
@@ -28,8 +29,11 @@ const filterSlice = createSlice({
     updateFilterBy: (state, action) => {
       state.filterBy = action.payload
     },
+    setSearchTerm: (state, action: PayloadAction<string>) => {
+      state.searchTerm = action.payload
+    },
   },
 })
 
 export default filterSlice.reducer
-export const { setFilteredProducts, setOrderBy, setFilterBy, updateFilterBy } = filterSlice.actions
+export const { setFilteredProducts, setOrderBy, setFilterBy, updateFilterBy, setSearchTerm } = filterSlice.actions

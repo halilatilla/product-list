@@ -34,11 +34,11 @@ const Home: NextPage = () => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <section>
-        <Header />
+        <Header products={localProducts} />
         <main className="container">
           <SubHeader />
           <div className={styles.products}>
-            <SideBar />
+            <SideBar products={localProducts} />
             <ProductList />
           </div>
         </main>

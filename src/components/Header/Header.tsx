@@ -1,19 +1,21 @@
 import { FC } from 'react'
 import classnames from 'classnames'
 
-import { Logo, Search, Cart } from '@src/components'
+import { Logo, SearchAndFilter, Cart } from '@src/components'
+import { IProduct } from '@src/types'
 import styles from './Header.module.css'
 
 interface Props {
   className?: string
+  products: IProduct[]
 }
 
-const Header: FC<Props> = ({ className, ...rest }) => {
+const Header: FC<Props> = ({ className, products, ...rest }) => {
   return (
     <header className={classnames(styles.headerWrapper, className)} {...rest} data-testid="header">
       <div className={classnames(styles.header, 'container')}>
         <Logo />
-        <Search placeholder="25 milyon’dan fazla ürün içerisinde ara" />
+        <SearchAndFilter products={products} />
         <Cart />
       </div>
     </header>
