@@ -3,7 +3,7 @@ import classnames from 'classnames'
 
 import { useAppSelector } from '@src/store'
 import { getUniqueItemsFromList, getSameItemCountFromList } from '@src/lib'
-import { filterInitialItems } from '@src/constants'
+import { filterInitialItems, filterOptions } from '@src/constants'
 import { IFilter, IProduct } from '@src/types'
 import SideBarList from './SideBarList/SideBarList'
 import styles from './SideBar.module.scss'
@@ -19,15 +19,15 @@ const SideBar: FC<Props> = ({ className, products, ...rest }) => {
   const [filterItems, setFilterItems] = useState<IFilter[]>(filterInitialItems)
 
   useEffect(() => {
-    const colors = getUniqueItemsFromList(filteredProducts, 'color')
-    const brands = getUniqueItemsFromList(filteredProducts, 'brand')
+    const colors = getUniqueItemsFromList(filteredProducts, filterOptions.COLOR)
+    const brands = getUniqueItemsFromList(filteredProducts, filterOptions.BRAND)
 
-    const colorCount = getSameItemCountFromList(filteredProducts, 'color')
-    const brandCount = getSameItemCountFromList(filteredProducts, 'brand')
+    const colorCount = getSameItemCountFromList(filteredProducts, filterOptions.COLOR)
+    const brandCount = getSameItemCountFromList(filteredProducts, filterOptions.BRAND)
 
     setFilterItems((prevState) => {
       return prevState.map((item) => {
-        if (item.value === 'color') {
+        if (item.value === filterOptions.COLOR) {
           return {
             ...item,
             items: colors.map((color) => ({
@@ -36,7 +36,7 @@ const SideBar: FC<Props> = ({ className, products, ...rest }) => {
               count: colorCount[color],
             })),
           }
-        } else if (item.value === 'brand') {
+        } else if (item.value === filterOptions.BRAND) {
           return {
             ...item,
             items: brands.map((brand) => ({
