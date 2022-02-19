@@ -2,8 +2,9 @@
 You can search, filter, sort and add products to cart. 
 Items persist with refresh using local storage.
 <br>
+![Screen Shot 2022-02-20 at 01 46 53](https://user-images.githubusercontent.com/27916419/154821647-0b31f39d-a29a-4103-8f43-b4b51afc5e9f.png)
 
-![Screen Shot 2022-02-20 at 01 41 35](https://user-images.githubusercontent.com/27916419/154821468-2372d2b9-9097-4015-903f-ce969c4f8acc.png)
+
 
 <br>
 
