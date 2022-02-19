@@ -38,7 +38,7 @@ const Home: NextPage = () => {
         <main className="container">
           <SubHeader />
           <div className={styles.products}>
-            <SideBar />
+            <SideBar products={localProducts} />
             <ProductList />
           </div>
         </main>

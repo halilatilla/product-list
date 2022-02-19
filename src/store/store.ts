@@ -2,13 +2,11 @@ import { configureStore } from '@reduxjs/toolkit'
 import { useDispatch, TypedUseSelectorHook, useSelector } from 'react-redux'
 
 import cartSlice from './reducers/cartSlice'
-import searchSlice from './reducers/searchSlice'
 import filterSlice from './reducers/filterSlice'
 
 const store = configureStore({
   reducer: {
     cart: cartSlice,
-    search: searchSlice,
     filter: filterSlice,
   },
 })

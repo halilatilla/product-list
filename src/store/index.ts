@@ -1,5 +1,4 @@
 export { addToCart, removeItemFromCart, updateCartItems } from './reducers/cartSlice'
-export { setSearchTerm } from './reducers/searchSlice'
-export { setFilteredProducts, setFilterBy, setOrderBy, updateFilterBy } from './reducers/filterSlice'
+export { setFilteredProducts, setFilterBy, setOrderBy, updateFilterBy, setSearchTerm } from './reducers/filterSlice'
 
 export { useAppDispatch, useAppSelector } from './store'

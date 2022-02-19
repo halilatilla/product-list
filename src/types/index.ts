@@ -33,5 +33,6 @@ export interface IFilterBy {
 export interface IFilterState {
   filterBy: IFilterBy
   orderBy?: string
+  searchTerm: string
   filteredProducts: IProduct[]
 }
