@@ -1,4 +1,3 @@
 export default function getSortedListByAZ<T>(list: T[], key: string): T[] {
-  // @ts-ignore
-  return list.sort((a, b) => (a[key].toLowerCase() < b[key].toLowerCase() ? -1 : 1))
+  return list.sort((a, b) => ((a as any)[key].toLowerCase() < (b as any)[key].toLowerCase() ? -1 : 1))
 }

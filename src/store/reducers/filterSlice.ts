@@ -2,10 +2,8 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { IFilterState } from '@src/types'
 
 const initialState: IFilterState = {
-  filterBy: {
-    color: '',
-    brand: '',
-  },
+  filterByBrand: '',
+  filterByColor: '',
   orderBy: '',
   searchTerm: '',
   filteredProducts: [],
@@ -22,13 +20,13 @@ const filterSlice = createSlice({
     setOrderBy: (state, action: PayloadAction<string>) => {
       state.orderBy = action.payload
     },
-    setFilterBy: (state, action: PayloadAction<{ value: string; productValue: string }>) => {
-      /* @ts-ignore */
-      state.filterBy[action.payload.productValue] = action.payload.value
+    setFilterByColor: (state, action) => {
+      state.filterByColor = action.payload
     },
-    updateFilterBy: (state, action) => {
-      state.filterBy = action.payload
+    setFilterByBrand: (state, action) => {
+      state.filterByBrand = action.payload
     },
+
     setSearchTerm: (state, action: PayloadAction<string>) => {
       state.searchTerm = action.payload
     },
@@ -36,4 +34,5 @@ const filterSlice = createSlice({
 })
 
 export default filterSlice.reducer
-export const { setFilteredProducts, setOrderBy, setFilterBy, updateFilterBy, setSearchTerm } = filterSlice.actions
+export const { setFilteredProducts, setOrderBy, setFilterByColor, setSearchTerm, setFilterByBrand } =
+  filterSlice.actions

@@ -12,20 +12,20 @@ interface Props {
 }
 
 const SearchAndFilter: FC<Props> = ({ products }) => {
-  const { filterBy, searchTerm } = useAppSelector((state) => state.filter)
+  const { filterByBrand, filterByColor, searchTerm } = useAppSelector((state) => state.filter)
   const dispatch = useAppDispatch()
   const { fuse } = useFuseSearch([filterByKeys.COLOR, filterByKeys.BRAND, filterByKeys.TITLE])
 
   useEffect(() => {
-    if (filterBy.brand === '' && filterBy.color === '') {
+    if (filterByBrand === '' && filterByColor === '') {
       dispatch(setFilteredProducts(products))
       return
     }
 
-    if (filterBy.brand !== '' && filterBy.color !== '') {
+    if (filterByBrand !== '' && filterByColor !== '') {
       dispatch(
         setFilteredProducts(
-          fuse.search({ $and: [{ brand: filterBy.brand }, { color: filterBy.color }] }).map((result) => result.item),
+          fuse.search({ $and: [{ brand: filterByBrand }, { color: filterByColor }] }).map((result) => result.item),
         ),
       )
       return
@@ -33,18 +33,18 @@ const SearchAndFilter: FC<Props> = ({ products }) => {
 
     dispatch(
       setFilteredProducts(
-        fuse.search({ $or: [{ brand: filterBy.brand }, { color: filterBy.color }] }).map((result) => result.item),
+        fuse.search({ $or: [{ brand: filterByBrand }, { color: filterByColor }] }).map((result) => result.item),
       ),
     )
-  }, [filterBy])
+  }, [filterByBrand, filterByColor])
 
   useEffect(() => {
     if (searchTerm.length > 2) {
-      dispatch(setFilteredProducts(fuse.search(searchTerm).map((result) => result.item)))
+      dispatch(setFilteredProducts(fuse.search({ title: searchTerm }).map((result) => result.item)))
       return
     }
 
-    if (filterBy.brand === '' && filterBy.color === '' && searchTerm.length < 2) {
+    if (filterByBrand === '' && filterByColor === '' && searchTerm.length < 2) {
       dispatch(setFilteredProducts(products))
     }
   }, [searchTerm])
