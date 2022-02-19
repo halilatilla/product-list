@@ -3,6 +3,7 @@ import { FC, useEffect } from 'react'
 import { useAppSelector, useAppDispatch, setFilteredProducts } from '@src/store'
 import { useFuseSearch } from '@src/hooks'
 import { IProduct } from '@src/types'
+import { filterByKeys } from '@src/constants'
 import { Search } from '@src/components'
 
 interface Props {
@@ -13,7 +14,7 @@ interface Props {
 const SearchAndFilter: FC<Props> = ({ products }) => {
   const { filterBy, searchTerm } = useAppSelector((state) => state.filter)
   const dispatch = useAppDispatch()
-  const { fuse } = useFuseSearch(['color', 'brand', 'title'])
+  const { fuse } = useFuseSearch([filterByKeys.COLOR, filterByKeys.BRAND, filterByKeys.TITLE])
 
   useEffect(() => {
     if (filterBy.brand === '' && filterBy.color === '') {
@@ -40,6 +41,11 @@ const SearchAndFilter: FC<Props> = ({ products }) => {
   useEffect(() => {
     if (searchTerm.length > 2) {
       dispatch(setFilteredProducts(fuse.search(searchTerm).map((result) => result.item)))
+      return
+    }
+
+    if (filterBy.brand === '' && filterBy.color === '' && searchTerm.length < 2) {
+      dispatch(setFilteredProducts(products))
     }
   }, [searchTerm])
 

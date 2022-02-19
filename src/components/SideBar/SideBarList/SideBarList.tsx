@@ -3,6 +3,7 @@ import classnames from 'classnames'
 
 import { useAppSelector, useAppDispatch, setFilterBy, setOrderBy } from '@src/store'
 import { getSortedListByAZ } from '@src/lib'
+import { filterOptions } from '@src/constants'
 import { Button } from '@src/components'
 import styles from './SideBarList.module.scss'
 
@@ -18,7 +19,7 @@ const SideBarList: FC<Props> = ({ className, items, title, productValue, ...rest
   const dispatch = useAppDispatch()
 
   const handleFilteredItem = ({ value, productValue }: { value: string; productValue: string }) => {
-    if (productValue === 'order') {
+    if (productValue === filterOptions.ORDER) {
       if (orderBy === value) {
         dispatch(setOrderBy(''))
         return

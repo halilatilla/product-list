@@ -1,11 +1,9 @@
 import { useEffect } from 'react'
 
 import { useAppSelector, useAppDispatch, setFilteredProducts } from '@src/store'
-import { getPriceDiscount } from '@src/lib'
+import { ORDER_OPTIONS_SELECT, orderByKeys } from '@src/constants'
+import { getSortedByDate, getSortedPriceByDiscount } from '@src/lib'
 import { Select } from '@src/components'
-import { orderOptions } from '@src/constants'
-
-const options = [{ value: '', label: 'sıralama' }, ...orderOptions]
 
 const Order = () => {
   const { filteredProducts, orderBy } = useAppSelector((state) => state.filter)
@@ -13,25 +11,27 @@ const Order = () => {
 
   useEffect(() => {
     const sortedProducts = Array.from(filteredProducts)?.sort((a, b) => {
-      if (orderBy === 'za') {
-        /* @ts-ignore */
-        return new Date(b.createdDate) - new Date(a.createdDate)
+      if (orderBy === orderByKeys.ZA) {
+        return getSortedByDate(b.createdDate, a.createdDate)
       }
-      if (orderBy === 'max') {
-        /* @ts-ignore */
-        return getPriceDiscount(parseFloat(b.price), b.discount) - getPriceDiscount(parseFloat(a.price), a.discount)
+      if (orderBy === orderByKeys.MAX) {
+        return getSortedPriceByDiscount(
+          { price: a.price, discount: a.discount },
+          { price: b.price, discount: b.discount },
+        )
       }
-      if (orderBy === 'min') {
-        /* @ts-ignore */
-        return getPriceDiscount(parseFloat(a.price), a.discount) - getPriceDiscount(parseFloat(b.price), b.discount)
+      if (orderBy === orderByKeys.MIN) {
+        return getSortedPriceByDiscount(
+          { price: b.price, discount: b.discount },
+          { price: a.price, discount: a.discount },
+        )
       }
-      /* @ts-ignore */
-      return new Date(a.createdDate) - new Date(b.createdDate)
+      return getSortedByDate(a.createdDate, b.createdDate)
     })
 
     dispatch(setFilteredProducts(sortedProducts))
   }, [orderBy])
-  return <Select options={options} />
+  return <Select options={ORDER_OPTIONS_SELECT} />
 }
 
 export default Order
