@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import classnames from 'classnames'
 
-import { useAppSelector, useAppDispatch, setFilterBy, setOrderBy, setFilteredProducts } from '@src/store'
+import { useAppSelector, useAppDispatch, setFilterBy, setOrderBy } from '@src/store'
 import { getSortedListByAZ } from '@src/lib'
 import { Button } from '@src/components'
 import styles from './SideBarList.module.scss'
