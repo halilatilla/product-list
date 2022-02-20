@@ -1,6 +1,7 @@
 @import './reset.css';
 @import './variables/_colors.css';
 @import './utils/index.css';
+@import '../../node_modules/rc-dialog/assets/index.css';
 
 html,
 body {
