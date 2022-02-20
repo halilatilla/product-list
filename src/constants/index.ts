@@ -46,3 +46,8 @@ export const filterInitialItems = [
     items: [],
   },
 ]
+
+export const paginationOptions = {
+  PAGE_SIZE: 12,
+  START_PAGE: 1,
+}

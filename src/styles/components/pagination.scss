@@ -1,0 +1,27 @@
+.pagination {
+  font-size: 10px;
+  display: flex;
+
+  .rc-pagination-item,
+  .rc-pagination-prev,
+  .rc-pagination-next {
+    border-radius: 8px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    a {
+      font-family: 'Roboto', sans-serif;
+      color: var(--c-text-secondary);
+    }
+  }
+
+  .rc-pagination-prev,
+  .rc-pagination-next {
+    button {
+      border-radius: 8px;
+    }
+  }
+}

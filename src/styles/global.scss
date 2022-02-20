@@ -1,7 +1,13 @@
 @import './reset.css';
 @import './variables/_colors.css';
 @import './utils/index.css';
+
+/* 3rd party */
 @import '../../node_modules/rc-dialog/assets/index.css';
+@import '../../node_modules/rc-pagination/assets/index.css';
+
+/* components */
+@import './components/index.scss';
 
 html,
 body {
