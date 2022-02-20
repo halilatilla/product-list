@@ -6,17 +6,17 @@ import styles from './Pagination.module.scss'
 
 interface Props {
   className?: string
-  defaultCurrent?: number
+  current?: number
   total?: number
   pageSize?: number
   onChange?: (page: number) => void
   hideOnSinglePage?: boolean
 }
 
-const Pagination: FC<Props> = ({ className, defaultCurrent, total, pageSize, onChange, hideOnSinglePage }) => {
+const Pagination: FC<Props> = ({ className, current, total, pageSize, onChange, hideOnSinglePage }) => {
   return (
     <RcPagination
-      defaultCurrent={defaultCurrent}
+      current={current}
       total={total}
       pageSize={pageSize}
       hideOnSinglePage={hideOnSinglePage}

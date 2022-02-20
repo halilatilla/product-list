@@ -29,7 +29,7 @@ const ProductList: FC<Props> = ({ className, ...rest }) => {
       </div>
       <div className={styles.pagination}>
         <Pagination
-          defaultCurrent={paginationOptions.START_PAGE}
+          current={page}
           total={filteredProducts.length}
           pageSize={paginationOptions.PAGE_SIZE}
           onChange={handlePagination}
