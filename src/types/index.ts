@@ -34,7 +34,7 @@ export interface IFilterBy {
 export interface IFilterState {
   filterByBrand: string
   filterByColor: string
-  orderBy?: string
+  sortingBy: string
   searchTerm: string
   filteredProducts: IProduct[]
 }

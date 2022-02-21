@@ -3,7 +3,7 @@ export {
   setFilteredProducts,
   setFilterByColor,
   setFilterByBrand,
-  setOrderBy,
+  setSortingBy,
   setSearchTerm,
 } from './reducers/filterSlice'
 

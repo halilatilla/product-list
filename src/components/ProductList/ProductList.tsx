@@ -4,7 +4,7 @@ import classnames from 'classnames'
 import { useAppSelector } from '@src/store'
 import { Pagination } from '@src/components'
 import { paginationOptions } from '@src/constants'
-import { getListByPaginated } from '@src/lib'
+import { getListByPaginated, getSortedProductList } from '@src/lib'
 import ProductCard from './ProductCard/ProductCard'
 import styles from './ProductList.module.scss'
 
@@ -13,7 +13,7 @@ interface Props {
 }
 
 const ProductList: FC<Props> = ({ className, ...rest }) => {
-  const { filteredProducts } = useAppSelector((state) => state.filter)
+  const { filteredProducts, sortingBy } = useAppSelector((state) => state.filter)
   const [page, setPage] = useState(paginationOptions.START_PAGE)
 
   const handlePagination = (e: number) => {
@@ -23,9 +23,11 @@ const ProductList: FC<Props> = ({ className, ...rest }) => {
   return (
     <div>
       <div className={classnames(styles.productList, className)} {...rest}>
-        {getListByPaginated(filteredProducts, page, paginationOptions.PAGE_SIZE)?.map((product) => (
-          <ProductCard key={product?.productId} product={product} />
-        ))}
+        {getListByPaginated(getSortedProductList(filteredProducts, sortingBy), page, paginationOptions.PAGE_SIZE)?.map(
+          (product) => (
+            <ProductCard key={product?.productId} product={product} />
+          ),
+        )}
       </div>
       <div className={styles.pagination}>
         <Pagination

@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import classnames from 'classnames'
 
-import { useAppSelector, useAppDispatch, setFilterByColor, setFilterByBrand, setOrderBy } from '@src/store'
+import { useAppSelector, useAppDispatch, setFilterByColor, setFilterByBrand, setSortingBy } from '@src/store'
 import { getSortedListByAZ } from '@src/lib'
 import { filterOptions } from '@src/constants'
 import { Button } from '@src/components'
@@ -16,17 +16,17 @@ interface Props {
 }
 
 const SideBarList: FC<Props> = ({ className, items, title, productValue, ...rest }) => {
-  const { filterByColor, filterByBrand, orderBy } = useAppSelector((state) => state.filter)
+  const { filterByColor, filterByBrand, sortingBy } = useAppSelector((state) => state.filter)
   const dispatch = useAppDispatch()
 
   const handleFilteredItem = ({ value, productValue }: { value: string; productValue: string }) => {
     if (productValue === filterOptions.ORDER) {
-      if (orderBy === value) {
-        dispatch(setOrderBy(''))
+      if (sortingBy === value) {
+        dispatch(setSortingBy(''))
         return
       }
 
-      dispatch(setOrderBy(value))
+      dispatch(setSortingBy(value))
       return
     }
 
@@ -56,7 +56,7 @@ const SideBarList: FC<Props> = ({ className, items, title, productValue, ...rest
           <li key={label}>
             <Button
               className={classnames(styles.item, {
-                [styles.active]: orderBy === value || filterByColor === value || filterByBrand === value,
+                [styles.active]: sortingBy === value || filterByColor === value || filterByBrand === value,
               })}
               label={label}
               appearance="text"
