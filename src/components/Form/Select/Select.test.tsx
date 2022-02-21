@@ -1,4 +1,4 @@
-import { render } from '@src/test/test-utils'
+import { render, screen } from '@src/test/test-utils'
 
 import Select from './Select'
 
@@ -19,5 +19,13 @@ describe('Select', () => {
   it('renders correctly', () => {
     const { container } = render(<Select {...PROPS} />)
     expect(container).toMatchSnapshot()
+  })
+
+  it('renders Select', () => {
+    render(<Select {...PROPS} />)
+
+    const input = screen.getByRole('combobox')
+
+    expect(input).toBeInTheDocument()
   })
 })

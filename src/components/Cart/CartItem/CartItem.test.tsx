@@ -1,4 +1,4 @@
-import { render } from '@src/test/test-utils'
+import { render, screen } from '@src/test/test-utils'
 
 import CartItem from './CartItem'
 
@@ -19,5 +19,17 @@ describe('CartItem', () => {
   it('renders correctly', () => {
     const { container } = render(<CartItem {...PROPS} />)
     expect(container).toMatchSnapshot()
+  })
+
+  it('renders Cart', () => {
+    render(<CartItem {...PROPS} />)
+
+    const cartItem = screen.getByTestId('cartItem')
+
+    expect(cartItem).toBeInTheDocument()
+
+    const button = screen.getByRole('button')
+
+    expect(button).toBeInTheDocument()
   })
 })

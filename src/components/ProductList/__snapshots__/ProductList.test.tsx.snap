@@ -2,7 +2,9 @@
 
 exports[`ProductList renders correctly 1`] = `
 <div>
-  <div>
+  <div
+    data-testid="productList"
+  >
     <div
       class="productList"
     />

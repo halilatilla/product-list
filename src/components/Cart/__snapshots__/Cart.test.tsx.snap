@@ -4,6 +4,7 @@ exports[`Cart renders correctly 1`] = `
 <div>
   <div
     class="cart flex-center"
+    data-testid="cart"
   >
     <p
       class="cartTitle"
