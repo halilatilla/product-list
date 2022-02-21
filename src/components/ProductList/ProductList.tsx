@@ -21,7 +21,7 @@ const ProductList: FC<Props> = ({ className, ...rest }) => {
   }
 
   return (
-    <div>
+    <div data-testid="productList">
       <div className={classnames(styles.productList, className)} {...rest}>
         {getListByPaginated(getSortedProductList(filteredProducts, sortingBy), page, paginationOptions.PAGE_SIZE)?.map(
           (product) => (

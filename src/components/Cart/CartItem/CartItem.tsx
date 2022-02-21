@@ -36,7 +36,7 @@ const CartItem: FC<Props> = ({ className, item, ...rest }) => {
         onConfirm={handleRemoveItemFromCart}
       />
 
-      <div className={classnames(styles.cartItem, className)} {...rest}>
+      <div className={classnames(styles.cartItem, className)} {...rest} data-testid="cartItem">
         <div className={classnames(styles.cartItemImage, 'flex-center')}>
           <Image src={imgUrl} alt={title} width={40} height={60} />
         </div>

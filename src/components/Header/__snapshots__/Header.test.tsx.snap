@@ -43,6 +43,7 @@ exports[`Header renders correctly 1`] = `
       />
       <div
         class="cart flex-center"
+        data-testid="cart"
       >
         <p
           class="cartTitle"

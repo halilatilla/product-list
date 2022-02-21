@@ -26,7 +26,7 @@ const Cart: FC<Props> = ({ className, ...rest }) => {
   }, [cartItems])
 
   return (
-    <div className={classnames(styles.cart, 'flex-center', className)} {...rest}>
+    <div className={classnames(styles.cart, 'flex-center', className)} {...rest} data-testid="cart">
       {localCartItems?.length > 0 && (
         <div className={classnames(styles.cartItemsCount, 'flex-center')}>{localCartItems?.length}</div>
       )}
