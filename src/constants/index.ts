@@ -10,7 +10,7 @@ export const ORDER_OPTIONS = [
 
 export const ORDER_OPTIONS_SELECT = [{ value: '', label: 'sıralama' }, ...ORDER_OPTIONS]
 
-export const orderByKeys = {
+export const sortingOptions = {
   MIN: 'min',
   MAX: 'max',
   AZ: 'az',

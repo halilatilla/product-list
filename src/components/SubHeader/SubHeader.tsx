@@ -1,7 +1,8 @@
 import { FC } from 'react'
 import classnames from 'classnames'
 
-import { Order } from '@src/components'
+import { Select } from '@src/components'
+import { ORDER_OPTIONS_SELECT } from '@src/constants'
 import { useAppSelector } from '@src/store'
 import styles from './SubHeader.module.scss'
 
@@ -22,7 +23,7 @@ const SubHeader: FC<Props> = ({ className, ...rest }) => {
           </>
         )}
       </div>
-      <Order />
+      <Select options={ORDER_OPTIONS_SELECT} />
     </div>
   )
 }

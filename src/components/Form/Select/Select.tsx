@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import classnames from 'classnames'
 
-import { useAppDispatch, useAppSelector, setOrderBy } from '@src/store'
+import { useAppDispatch, useAppSelector, setSortingBy } from '@src/store'
 
 import styles from './Select.module.scss'
 
@@ -13,14 +13,14 @@ interface Props {
 
 const Select: FC<Props> = ({ className, options, ...rest }) => {
   const dispatch = useAppDispatch()
-  const { orderBy } = useAppSelector((state) => state.filter)
+  const { sortingBy } = useAppSelector((state) => state.filter)
 
   const handleSearchTerm = (value: string) => {
     if (!value) {
-      dispatch(setOrderBy(''))
+      dispatch(setSortingBy(''))
       return
     }
-    dispatch(setOrderBy(value))
+    dispatch(setSortingBy(value))
   }
 
   return (
@@ -30,7 +30,7 @@ const Select: FC<Props> = ({ className, options, ...rest }) => {
       {...rest}
     >
       {options.map((option) => (
-        <option key={option.value} value={option.value} selected={option.value === orderBy}>
+        <option key={option.value} value={option.value} selected={option.value === sortingBy}>
           {option.label}
         </option>
       ))}

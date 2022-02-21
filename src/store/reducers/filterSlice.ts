@@ -4,7 +4,7 @@ import { IFilterState } from '@src/types'
 const initialState: IFilterState = {
   filterByBrand: '',
   filterByColor: '',
-  orderBy: '',
+  sortingBy: '',
   searchTerm: '',
   filteredProducts: [],
 }
@@ -17,8 +17,8 @@ const filterSlice = createSlice({
       state.filteredProducts = action.payload
     },
 
-    setOrderBy: (state, action: PayloadAction<string>) => {
-      state.orderBy = action.payload
+    setSortingBy: (state, action: PayloadAction<string>) => {
+      state.sortingBy = action.payload
     },
     setFilterByColor: (state, action) => {
       state.filterByColor = action.payload
@@ -34,5 +34,5 @@ const filterSlice = createSlice({
 })
 
 export default filterSlice.reducer
-export const { setFilteredProducts, setOrderBy, setFilterByColor, setSearchTerm, setFilterByBrand } =
+export const { setFilteredProducts, setSortingBy, setFilterByColor, setSearchTerm, setFilterByBrand } =
   filterSlice.actions
