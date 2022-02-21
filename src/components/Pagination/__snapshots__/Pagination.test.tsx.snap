@@ -3,7 +3,7 @@
 exports[`Pagination renders correctly 1`] = `
 <div>
   <ul
-    class="rc-pagination pagination pagination"
+    class="rc-pagination pagination"
     unselectable="unselectable"
   >
     <li

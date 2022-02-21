@@ -2,8 +2,6 @@ import { FC } from 'react'
 import classnames from 'classnames'
 import RcPagination from 'rc-pagination'
 
-import styles from './Pagination.module.scss'
-
 interface Props {
   className?: string
   current?: number
@@ -21,7 +19,7 @@ const Pagination: FC<Props> = ({ className, current, total, pageSize, onChange, 
       pageSize={pageSize}
       hideOnSinglePage={hideOnSinglePage}
       onChange={onChange}
-      className={classnames(styles.pagination, 'pagination', className)}
+      className={classnames('pagination', className)}
     />
   )
 }

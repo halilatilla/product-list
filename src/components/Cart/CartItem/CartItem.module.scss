@@ -21,7 +21,7 @@
 }
 
 .cartItemTitle {
-  font-size: 12px;
+  font-size: var(--font-size-xs);
   text-transform: capitalize;
   display: block;
 }
