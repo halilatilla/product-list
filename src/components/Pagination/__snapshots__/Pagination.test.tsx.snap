@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination renders correctly 1`] = `
+<div>
+  <ul
+    class="rc-pagination pagination pagination"
+    unselectable="unselectable"
+  >
+    <li
+      aria-disabled="true"
+      class="rc-pagination-prev rc-pagination-disabled"
+      title="上一页"
+    >
+      <button
+        aria-label="prev page"
+        class="rc-pagination-item-link"
+        disabled=""
+        type="button"
+      />
+    </li>
+    <li
+      class="rc-pagination-item rc-pagination-item-1 rc-pagination-item-active"
+      tabindex="0"
+      title="1"
+    >
+      <a
+        rel="nofollow"
+      >
+        1
+      </a>
+    </li>
+    <li
+      class="rc-pagination-item rc-pagination-item-2"
+      tabindex="0"
+      title="2"
+    >
+      <a
+        rel="nofollow"
+      >
+        2
+      </a>
+    </li>
+    <li
+      class="rc-pagination-item rc-pagination-item-3"
+      tabindex="0"
+      title="3"
+    >
+      <a
+        rel="nofollow"
+      >
+        3
+      </a>
+    </li>
+    <li
+      class="rc-pagination-item rc-pagination-item-4"
+      tabindex="0"
+      title="4"
+    >
+      <a
+        rel="nofollow"
+      >
+        4
+      </a>
+    </li>
+    <li
+      class="rc-pagination-item rc-pagination-item-5 rc-pagination-item-before-jump-next"
+      tabindex="0"
+      title="5"
+    >
+      <a
+        rel="nofollow"
+      >
+        5
+      </a>
+    </li>
+    <li
+      class="rc-pagination-jump-next"
+      tabindex="0"
+      title="向后 5 页"
+    >
+      <button
+        aria-label="next page"
+        class="rc-pagination-item-link"
+        type="button"
+      />
+    </li>
+    <li
+      class="rc-pagination-item rc-pagination-item-10"
+      tabindex="0"
+      title="10"
+    >
+      <a
+        rel="nofollow"
+      >
+        10
+      </a>
+    </li>
+    <li
+      aria-disabled="false"
+      class="rc-pagination-next"
+      tabindex="0"
+      title="下一页"
+    >
+      <button
+        aria-label="next page"
+        class="rc-pagination-item-link"
+        type="button"
+      />
+    </li>
+    <li
+      class="rc-pagination-options"
+    />
+  </ul>
+</div>
+`;

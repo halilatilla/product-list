@@ -3,10 +3,9 @@
 exports[`Button renders correctly 1`] = `
 <div>
   <button
-    class="button undefined"
+    class="button flex-center undefined"
     type="button"
   >
-    
      
   </button>
 </div>

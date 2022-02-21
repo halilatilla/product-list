@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react'
+import { render } from '@src/test/test-utils'
 
 import ProductList from './ProductList'
 

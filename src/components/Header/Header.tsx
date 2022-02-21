@@ -3,7 +3,7 @@ import classnames from 'classnames'
 
 import { Logo, SearchAndFilter, Cart } from '@src/components'
 import { IProduct } from '@src/types'
-import styles from './Header.module.css'
+import styles from './Header.module.scss'
 
 interface Props {
   className?: string

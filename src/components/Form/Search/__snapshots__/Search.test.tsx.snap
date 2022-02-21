@@ -3,9 +3,8 @@
 exports[`Search renders correctly 1`] = `
 <div>
   <input
-    class="input"
+    class="search"
     type="search"
-    value=""
   />
 </div>
 `;

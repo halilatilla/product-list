@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cart renders correctly 1`] = `
+<div>
+  <div
+    class="cart flex-center"
+  >
+    <p
+      class="cartTitle"
+    >
+      sepetim
+    </p>
+    <div
+      class="cartDetail"
+    >
+      <div>
+        Sepetinizde ürün bulunmamaktadır.
+      </div>
+    </div>
+  </div>
+</div>
+`;

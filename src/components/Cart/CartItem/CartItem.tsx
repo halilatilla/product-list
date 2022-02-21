@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { useAppDispatch, removeItemFromCart } from '@src/store'
 import { ICart } from '@src/types'
 import { Button, Modal } from '@src/components'
-import styles from './CartItem.module.css'
+import styles from './CartItem.module.scss'
 
 interface Props {
   className?: string
