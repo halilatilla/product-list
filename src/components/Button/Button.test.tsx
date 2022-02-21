@@ -1,10 +1,11 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen, fireEvent } from '@testing-library/react'
 
 import Button from './Button'
 
 describe('Button', () => {
   const PROPS = {
     onClick: jest.fn(),
+    disabled: false,
   }
 
   it('renders correctly', () => {
@@ -12,11 +13,11 @@ describe('Button', () => {
     expect(container).toMatchSnapshot()
   })
 
-  it('renders Button', () => {
-    render(<Button {...PROPS} />)
-
+  it('could not clickable if button disabled ', () => {
+    render(<Button {...PROPS} disabled={true} />)
     const button = screen.getByRole('button')
-
-    expect(button).toBeInTheDocument()
+    expect(button).toBeDisabled()
+    button.click()
+    expect(PROPS.onClick).not.toHaveBeenCalled()
   })
 })
