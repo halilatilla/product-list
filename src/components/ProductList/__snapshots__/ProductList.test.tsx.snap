@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductList renders correctly 1`] = `
+<div>
+  <div>
+    <div
+      class="productList"
+    />
+    <div
+      class="pagination"
+    />
+  </div>
+</div>
+`;

@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SideBarList renders correctly 1`] = `
+<div>
+  <div
+    class="filter"
+    products=""
+  >
+    <ul />
+  </div>
+</div>
+`;

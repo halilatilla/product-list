@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchAndFilter renders correctly 1`] = `
+<div>
+  <input
+    class="search"
+    placeholder="25 milyon’dan fazla ürün içerisinde ara"
+    type="search"
+  />
+</div>
+`;

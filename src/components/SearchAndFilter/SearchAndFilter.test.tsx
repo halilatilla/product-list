@@ -1,14 +1,14 @@
 import { render } from '@src/test/test-utils'
 
-import SideBar from './SideBar'
+import SearchAndFilter from './SearchAndFilter'
 
-describe('SideBar', () => {
+describe('SearchAndFilter', () => {
   const PROPS = {
     products: [],
   }
 
   it.only('renders correctly', () => {
-    const { container } = render(<SideBar {...PROPS} />)
+    const { container } = render(<SearchAndFilter {...PROPS} />)
     expect(container).toMatchSnapshot()
   })
 })

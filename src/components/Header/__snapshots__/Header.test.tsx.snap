@@ -7,7 +7,7 @@ exports[`Header renders correctly 1`] = `
     data-testid="header"
   >
     <div
-      class="header container flex-center-between"
+      class="header container"
     >
       <a
         class=""
@@ -36,11 +36,26 @@ exports[`Header renders correctly 1`] = `
           <noscript />
         </span>
       </a>
-      <div>
-        search
-      </div>
-      <div>
-        basket
+      <input
+        class="search"
+        placeholder="25 milyon’dan fazla ürün içerisinde ara"
+        type="search"
+      />
+      <div
+        class="cart flex-center"
+      >
+        <p
+          class="cartTitle"
+        >
+          sepetim
+        </p>
+        <div
+          class="cartDetail"
+        >
+          <div>
+            Sepetinizde ürün bulunmamaktadır.
+          </div>
+        </div>
       </div>
     </div>
   </header>

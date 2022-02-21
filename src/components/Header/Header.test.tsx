@@ -1,22 +1,14 @@
-import { render, screen } from '@testing-library/react'
+import { render } from '@src/test/test-utils'
 
 import Header from './Header'
 
 describe('Header', () => {
-  const DATA = {
-    className: '',
+  const PROPS = {
+    products: [],
   }
 
   it('renders correctly', () => {
-    const { container } = render(<Header {...DATA} />)
+    const { container } = render(<Header {...PROPS} />)
     expect(container).toMatchSnapshot()
-  })
-
-  it('renders Header', () => {
-    render(<Header {...DATA} />)
-
-    const header = screen.getByTestId('header')
-
-    expect(header).toBeInTheDocument()
   })
 })

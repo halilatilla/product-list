@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SideBar renders correctly 1`] = `
+<div>
+  <div
+    class="sidebar"
+  >
+    <div
+      class="filter"
+    >
+      <ul />
+    </div>
+    <div
+      class="filter"
+    >
+      <p
+        class="title"
+      >
+        sıralama
+      </p>
+      <ul>
+        <li>
+          <button
+            class="button flex-center text item"
+            type="button"
+          >
+            en düşük fiyat
+             
+          </button>
+        </li>
+        <li>
+          <button
+            class="button flex-center text item"
+            type="button"
+          >
+            en yeniler (A-Z)
+             
+          </button>
+        </li>
+        <li>
+          <button
+            class="button flex-center text item"
+            type="button"
+          >
+            en yeniler (Z-A)
+             
+          </button>
+        </li>
+        <li>
+          <button
+            class="button flex-center text item"
+            type="button"
+          >
+            en yüksek fiyat
+             
+          </button>
+        </li>
+      </ul>
+    </div>
+    <div
+      class="filter"
+    >
+      <ul />
+    </div>
+  </div>
+</div>
+`;
