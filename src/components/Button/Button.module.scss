@@ -3,7 +3,8 @@
   height: 26px;
   width: 70px;
   font-size: 12px;
-  font-weight: bold;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
   text-transform: uppercase;
   line-height: 0;
   border: none;
@@ -24,8 +25,8 @@
   color: var(--c-delete);
   border: 1px solid var(--c-delete);
   text-transform: capitalize;
-  font-size: 10px;
-  font-weight: normal;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-normal);
   height: 18px;
   width: 50px;
 }
@@ -46,14 +47,14 @@
   text-transform: capitalize;
   border-radius: 8px;
   width: 100%;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
 }
 
 .text {
   font-weight: normal;
   text-transform: capitalize;
-  font-size: 14px;
+  font-size: var(--font-size-sm);
   width: max-content;
 
   &:hover {

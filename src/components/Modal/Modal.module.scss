@@ -10,8 +10,8 @@
 .header {
   border-bottom: 1px solid #cdcdcd;
   padding: 0 24px 14px 24px;
-  font-weight: bold;
-  font-size: 14px;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-sm);
   margin-left: -20px;
   margin-right: -20px;
 
@@ -21,7 +21,7 @@
 }
 
 .content {
-  font-size: 12px;
+  font-size: var(--font-size-xs);
   padding: 16px 10px 0 4px;
   overflow: hidden;
   text-overflow: ellipsis;

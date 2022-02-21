@@ -1,4 +1,5 @@
 @import './reset.css';
+@import './variables/_fonts.css';
 @import './variables/_colors.css';
 @import './utils/index.css';
 
@@ -11,14 +12,15 @@
 
 html,
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: var(--font-family);
   color: var(--c-text);
   background-color: var(--c-background);
   scroll-behavior: smooth;
+  font-size: var(--font-size-base);
 }
 
 h1 {
-  font-size: 28px;
-  font-weight: 700;
-  line-height: 28px;
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-md);
 }

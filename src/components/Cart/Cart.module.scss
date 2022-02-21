@@ -66,7 +66,7 @@
   border-radius: 50%;
   background-color: var(--c-primary);
   color: var(--c-white);
-  font-size: 12px;
-  font-weight: 500;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
   line-height: 0;
 }

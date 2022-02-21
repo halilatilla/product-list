@@ -1,5 +1,5 @@
 .title {
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
   text-transform: capitalize;
   margin-top: 24px;
   margin-bottom: 20px;
@@ -7,7 +7,7 @@
 
 .item {
   color: var(--c-text-secondary);
-  font-size: 14px;
+  font-size: var(--font-size-sm);
   text-transform: capitalize;
 
   &:hover {
