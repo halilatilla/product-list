@@ -6,13 +6,10 @@ import { Pagination } from '@src/components'
 import { paginationOptions } from '@src/constants'
 import { getListByPaginated, getSortedProductList } from '@src/lib'
 import ProductCard from './ProductCard/ProductCard'
+import IProductList from './ProductList.types'
 import styles from './ProductList.module.scss'
 
-interface Props {
-  className?: string
-}
-
-const ProductList: FC<Props> = ({ className, ...rest }) => {
+const ProductList: FC<IProductList> = ({ className, ...rest }) => {
   const { filteredProducts, sortingBy } = useAppSelector((state) => state.filter)
   const [page, setPage] = useState(paginationOptions.START_PAGE)
 

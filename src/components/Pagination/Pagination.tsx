@@ -2,16 +2,9 @@ import { FC } from 'react'
 import classnames from 'classnames'
 import RcPagination from 'rc-pagination'
 
-interface Props {
-  className?: string
-  current?: number
-  total?: number
-  pageSize?: number
-  onChange?: (page: number) => void
-  hideOnSinglePage?: boolean
-}
+import IPagination from './Pagination.types'
 
-const Pagination: FC<Props> = ({ className, current, total, pageSize, onChange, hideOnSinglePage }) => {
+const Pagination: FC<IPagination> = ({ className, current, total, pageSize, onChange, hideOnSinglePage }) => {
   return (
     <RcPagination
       current={current}

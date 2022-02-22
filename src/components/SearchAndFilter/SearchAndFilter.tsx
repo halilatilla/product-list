@@ -2,16 +2,11 @@ import { FC, useEffect } from 'react'
 
 import { useAppSelector, useAppDispatch, setFilteredProducts } from '@src/store'
 import { useFuseSearch } from '@src/hooks'
-import { IProduct } from '@src/types'
 import { filterByKeys } from '@src/constants'
 import { Search } from '@src/components'
+import ISearchAndFilter from './SearchAndFilter.types'
 
-interface Props {
-  className?: string
-  products: IProduct[]
-}
-
-const SearchAndFilter: FC<Props> = ({ products }) => {
+const SearchAndFilter: FC<ISearchAndFilter> = ({ products }) => {
   const { filterByBrand, filterByColor, searchTerm } = useAppSelector((state) => state.filter)
   const dispatch = useAppDispatch()
   const { fuse } = useFuseSearch([filterByKeys.COLOR, filterByKeys.BRAND, filterByKeys.TITLE])
