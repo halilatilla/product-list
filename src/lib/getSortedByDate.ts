@@ -1,3 +1,3 @@
-export default function getSortedByDate(dateOne: Date, dateTwo: Date): number {
+export default function getSortedByDate(dateOne: string, dateTwo: string): number {
   return new Date(dateOne).valueOf() - new Date(dateTwo).valueOf()
 }

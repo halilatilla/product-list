@@ -5,7 +5,7 @@ import Head from 'next/head'
 import { getAllProducts } from '@src/api'
 import { useAppDispatch, setFilteredProducts } from '@src/store'
 import { useLocalStorage } from '@src/hooks'
-import { Header, SubHeader, SideBar, ProductList } from '@src/components'
+import { Header, SubHeader, SideBar, ProductListWithPagination } from '@src/components'
 
 import styles from '@src/styles/pages/Products.module.scss'
 
@@ -39,7 +39,7 @@ const Home: NextPage = () => {
           <SubHeader />
           <div className={styles.products}>
             <SideBar products={localProducts} />
-            <ProductList />
+            <ProductListWithPagination />
           </div>
         </main>
       </section>

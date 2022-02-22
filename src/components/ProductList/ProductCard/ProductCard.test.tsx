@@ -1,4 +1,4 @@
-import { render } from '@src/test/test-utils'
+import { render } from '@src/testUtils'
 
 import ProductCard from './ProductCard'
 
@@ -21,7 +21,7 @@ describe('ProductCard', () => {
       color: '',
       discount: 0,
       price: '',
-      createdDate: new Date(Date.now()),
+      createdDate: '',
     },
   }
 

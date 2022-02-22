@@ -16,7 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@src/*": ["./src/*"],
-      "@test-utils": ["./src/test/*"]
+      "@test-utils": ["src/testUtils/*"]
     },
     "incremental": true
   },
