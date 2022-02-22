@@ -2,18 +2,13 @@ import { FC, useState, useEffect } from 'react'
 import classnames from 'classnames'
 import Image from 'next/image'
 
-import { IProduct } from '@src/types'
 import { getPriceDiscount } from '@src/lib'
 import { useAppDispatch, addToCart, useAppSelector } from '@src/store'
 import { Button } from '@src/components'
+import IProductCard from './ProductCard.types'
 import styles from './ProductCard.module.scss'
 
-interface Props {
-  className?: string
-  product: IProduct
-}
-
-const ProductCard: FC<Props> = ({ className, product, ...rest }) => {
+const ProductCard: FC<IProductCard> = ({ className, product, ...rest }) => {
   const { productId, imgUrl, title, brand, color, discount, price } = product
 
   const [itemIsAlreadyAdded, setItemIsAlreadyAdded] = useState(false)

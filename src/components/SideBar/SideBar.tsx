@@ -6,14 +6,10 @@ import { getUniqueItemsFromList, getSameItemCountFromList } from '@src/lib'
 import { filterInitialItems, filterOptions } from '@src/constants'
 import { IFilter, IProduct } from '@src/types'
 import SideBarList from './SideBarList/SideBarList'
+import ISideBar from './SideBar.types'
 import styles from './SideBar.module.scss'
 
-interface Props {
-  className?: string
-  products: IProduct[]
-}
-
-const SideBar: FC<Props> = ({ className, products, ...rest }) => {
+const SideBar: FC<ISideBar> = ({ className, products, ...rest }) => {
   const { filteredProducts } = useAppSelector((state) => state.filter)
 
   const [filterItems, setFilterItems] = useState<IFilter[]>(filterInitialItems)

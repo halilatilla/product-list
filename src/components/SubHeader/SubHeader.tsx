@@ -4,13 +4,10 @@ import classnames from 'classnames'
 import { Select } from '@src/components'
 import { ORDER_OPTIONS_SELECT } from '@src/constants'
 import { useAppSelector } from '@src/store'
+import ISubHeader from './SubHeader.types'
 import styles from './SubHeader.module.scss'
 
-interface Props {
-  className?: string
-}
-
-const SubHeader: FC<Props> = ({ className, ...rest }) => {
+const SubHeader: FC<ISubHeader> = ({ className, ...rest }) => {
   const { searchTerm } = useAppSelector((state) => state.filter)
   return (
     <div className={classnames(styles.subHeader, 'flex-center-between', className)} {...rest}>

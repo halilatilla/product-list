@@ -3,11 +3,9 @@ import classnames from 'classnames'
 import Link from 'next/link'
 import Image from 'next/image'
 
-interface Props {
-  className?: string
-}
+import ILogo from './Logo.types'
 
-const Logo: FC<Props> = ({ className, ...rest }) => {
+const Logo: FC<ILogo> = ({ className, ...rest }) => {
   return (
     <Link href="/">
       <a className={classnames(className)} {...rest}>

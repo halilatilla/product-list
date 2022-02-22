@@ -2,15 +2,10 @@ import { FC } from 'react'
 import classnames from 'classnames'
 
 import { Logo, SearchAndFilter, Cart } from '@src/components'
-import { IProduct } from '@src/types'
+import IHeader from './Header.types'
 import styles from './Header.module.scss'
 
-interface Props {
-  className?: string
-  products: IProduct[]
-}
-
-const Header: FC<Props> = ({ className, products, ...rest }) => {
+const Header: FC<IHeader> = ({ className, products, ...rest }) => {
   return (
     <header className={classnames(styles.headerWrapper, className)} {...rest} data-testid="header">
       <div className={classnames(styles.header, 'container')}>

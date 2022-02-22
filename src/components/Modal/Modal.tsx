@@ -3,18 +3,10 @@ import classnames from 'classnames'
 import Dialog from 'rc-dialog'
 
 import { Button } from '@src/components'
+import IModal from './Modal.types'
 import styles from './Modal.module.scss'
 
-interface Props {
-  className?: string
-  onClose: () => void
-  onConfirm: () => void
-  isVisible: boolean
-  header?: string
-  content?: string
-}
-
-const Modal: FC<Props> = ({ className, onClose, onConfirm, isVisible, header, content }) => {
+const Modal: FC<IModal> = ({ className, onClose, onConfirm, isVisible, header, content }) => {
   return (
     <Dialog
       animation="zoom"
