@@ -8,12 +8,24 @@ describe('Button', () => {
     disabled: false,
   }
 
+  beforeEach(() => {
+    jest.clearAllMocks()
+  })
+
   it('renders correctly', () => {
     const { container } = render(<Button {...PROPS} />)
     expect(container).toMatchSnapshot()
   })
 
-  it('could not clickable if button disabled ', () => {
+  it('button is clickable if disabled false ', () => {
+    render(<Button {...PROPS} />)
+    const button = screen.getByRole('button')
+    expect(button).not.toBeDisabled()
+    button.click()
+    expect(PROPS.onClick).toHaveBeenCalled()
+  })
+
+  it('button is not clickable if disabled true ', () => {
     render(<Button {...PROPS} disabled={true} />)
     const button = screen.getByRole('button')
     expect(button).toBeDisabled()
