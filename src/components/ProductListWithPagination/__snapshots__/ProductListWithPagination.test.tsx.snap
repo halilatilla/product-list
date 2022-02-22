@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductListWithPagination renders correctly 1`] = `
+<div>
+  <div>
+    <ul
+      aria-label="product-list"
+      class="productList"
+    />
+    <div
+      class="pagination"
+    />
+  </div>
+</div>
+`;

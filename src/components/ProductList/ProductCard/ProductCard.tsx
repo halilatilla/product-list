@@ -35,7 +35,7 @@ const ProductCard: FC<IProductCard> = ({ className, product, ...rest }) => {
   }, [store])
 
   return (
-    <div className={classnames(styles.productCard, className)} {...rest}>
+    <li className={classnames(styles.productCard, className)} {...rest}>
       <div className={classnames(styles.imageWrapper, 'flex-center')}>
         <Image src={imgUrl} alt={title} className={styles.image} width={224} height={332} />
       </div>
@@ -69,7 +69,7 @@ const ProductCard: FC<IProductCard> = ({ className, product, ...rest }) => {
           <Button onClick={handleAddToCart} className={styles.addToCart} label="sepete ekle" appearance="addToCart" />
         )}
       </div>
-    </div>
+    </li>
   )
 }
 

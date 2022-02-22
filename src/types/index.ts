@@ -2,7 +2,7 @@ export interface IProduct {
   productId: string
   title: string
   brand: string
-  createdDate: Date
+  createdDate: Date | string
   color: string
   price: string
   discount: number

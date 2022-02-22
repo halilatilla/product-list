@@ -2,7 +2,7 @@
 
 exports[`ProductCard renders correctly 1`] = `
 <div>
-  <div
+  <li
     class="productCard"
   >
     <div
@@ -98,6 +98,6 @@ exports[`ProductCard renders correctly 1`] = `
          
       </button>
     </div>
-  </div>
+  </li>
 </div>
 `;
