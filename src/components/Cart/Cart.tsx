@@ -4,13 +4,10 @@ import classnames from 'classnames'
 import { useAppSelector, useAppDispatch, updateCartItems } from '@src/store'
 import { useLocalStorage } from '@src/hooks'
 import CartItem from './CartItem/CartItem'
+import ICart from './Cart.types'
 import styles from './Cart.module.scss'
 
-interface Props {
-  className?: string
-}
-
-const Cart: FC<Props> = ({ className, ...rest }) => {
+const Cart: FC<ICart> = ({ className, ...rest }) => {
   const cartItems = useAppSelector((state) => state.cart)
   const dispatch = useAppDispatch()
   const [localCartItems, setLocalCartItems] = useLocalStorage('cart', cartItems)

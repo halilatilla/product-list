@@ -3,15 +3,10 @@ import classnames from 'classnames'
 
 import { useAppDispatch, setSearchTerm } from '@src/store'
 import { removeWhiteSpace } from '@src/lib'
-
+import ISearch from './Search.types'
 import styles from './Search.module.scss'
 
-interface Props {
-  placeholder?: string
-  className?: string
-}
-
-const Search: FC<Props> = ({ className, ...rest }) => {
+const Search: FC<ISearch> = ({ className, ...rest }) => {
   const dispatch = useAppDispatch()
 
   const handleSearchTerm = (value: string) => {
