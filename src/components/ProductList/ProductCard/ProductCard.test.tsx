@@ -21,7 +21,7 @@ describe('ProductCard', () => {
       color: '',
       discount: 0,
       price: '',
-      createdDate: new Date(Date.now()),
+      createdDate: '',
     },
   }
 
