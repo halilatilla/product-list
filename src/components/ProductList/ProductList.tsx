@@ -15,7 +15,7 @@ const ProductList: FC<IProductList> = ({ className, products, page, ...rest }) =
     <ul aria-label="product-list" className={classnames(styles.productList, className)} {...rest}>
       {getListByPaginated(getSortedProductList(filteredProducts, sortingBy), page, paginationOptions.PAGE_SIZE)?.map(
         (product) => (
-          <ProductCard data-testid="product" key={product?.productId} product={product} />
+          <ProductCard key={product?.productId} product={product} />
         ),
       )}
     </ul>
