@@ -1,4 +1,4 @@
-import { render, screen } from '@src/test/test-utils'
+import { render, screen } from '@src/testUtils'
 
 import Select from './Select'
 

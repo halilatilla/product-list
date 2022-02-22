@@ -1,4 +1,4 @@
-import { render } from '@src/test/test-utils'
+import { render } from '@src/testUtils'
 
 import Logo from './SubHeader'
 
