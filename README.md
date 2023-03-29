@@ -1,6 +1,6 @@
-# Product List [Demo](https://product-list-halil-atilla.vercel.app/)
-You can search, filter, sort and add products to cart. 
-Items persist with refresh using local storage.
+# 🛍️ Product List  [Demo](https://product-list-halil-atilla.vercel.app/)
+Easily search, filter, sort, and add products to your cart. Items persist across refreshes using local storage.
+
 <br>
 
 ![Screen Shot 2022-02-20 at 01 46 53](https://user-images.githubusercontent.com/27916419/154821647-0b31f39d-a29a-4103-8f43-b4b51afc5e9f.png)
@@ -9,46 +9,54 @@ Items persist with refresh using local storage.
 
 <br>
 
-## 💻 Tech-Stack
-- NextJS 
-- Typescript
+## **🧰 Tech Stack**
+
+- Next.js
+- TypeScript
 - Fuse.js
-- Redux Toolkit 
-- Jest - React Testing Library
+- Redux Toolkit
+- Jest & React Testing Library
 
 <br>
 
-## Development
+## **🚀 Development**
 
-To install and work on `https://github.com/halilatilla/product-list`
+To set up and work on the **[Product List repository](https://github.com/halilatilla/product-list)**:
 
-```bash
-git clone https://github.com/halilatilla/product-list
-cd todo-app
-npm install or yarn install
+```
+git clone https://github.com/halilatilla/product-list.git
+cd product-list
+npm install
+// or
+yarn install
 ```
 
-<br>
+Start the development server:
 
-```bash
+```
 yarn dev
 ```
 
-`http://localhost:3000/`
+Visit **[http://localhost:3000/](http://localhost:3000/)**
 
 <br>
 
-## Test
+## **🧪 Testing**
 
-```bash
+Run tests with:
+
+```
 yarn test
 ```
+
 <br>
 
-## Authors
+## **👤 Authors**
 
-- [@halilatilla](https://www.github.com/halilatilla)
+- **[@halilatilla](https://github.com/halilatilla)**
 
-## License
+<br>
 
-[MIT](https://choosealicense.com/licenses/mit/)
+## **📄 License**
+
+This project is licensed under the MIT License - see the **[LICENSE](https://github.com/halilatilla/product-list/blob/main/LICENSE)** file for details.
